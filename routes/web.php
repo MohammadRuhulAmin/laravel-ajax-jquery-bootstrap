@@ -22,3 +22,4 @@ Route::get('/index',function(){
 });
 
 Route::post('/index/student/insert/',[StudentController::class,'store']);
+Route::get('/index/student/list/',[StudentController::class,'index']);

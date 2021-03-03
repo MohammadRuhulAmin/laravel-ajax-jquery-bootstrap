@@ -39,6 +39,18 @@
         </form>
     </div>
     <div class="alert alert-danger" id="msg"></div>
+    <div>
+        <button id="viewAllData">View All Data</button>
+    </div>
+    <table class="table">
+        <tr>
+            <td>id</td><td>name</td>
+            <td>email</td><td>contact</td><td>address</td>
+        </tr>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
 
 
 

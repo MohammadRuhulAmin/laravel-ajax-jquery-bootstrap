@@ -4,7 +4,34 @@ $.ajaxSetup({
     }
 });
 
+
 $(document).ready(function(){
+     // show all the data inside table
+     $('#viewAllData').click(function(){
+        $.get("/index/student/list/",function(data){
+            console.log(data);
+        });
+     });
+     function getData(){
+         var result="";
+        $.get("/index/student/list/",function(data){
+            console.log(data[3].student_name);
+            for(let x = 0;x<data.length;++x){
+                result += `<tr>
+                <td>${data[x].id}</td>
+                <td>${data[x].student_name}</td>
+                <td>${data[x].student_email}</td>
+                <td>${data[x].student_contact}</td>
+                <td>${data[x].student_address}</td>  
+              </tr>`
+            }
+            $('#tbody').html(result);
+          
+        });
+     }
+     getData();
+     
+
    $('#student_btn').click(function(e){
        e.preventDefault();
         let student_name = $('#student_name').val();
@@ -31,8 +58,8 @@ $(document).ready(function(){
             //     console.log(error);
             // }
         });
-
-
-
    });
+
+
+
 });
